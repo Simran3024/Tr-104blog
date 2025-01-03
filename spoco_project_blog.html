@@ -3,43 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Timeline</title>
-    <style>
+    <title>Project</title>
+<style>
+    /* General Body Styles */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #fafafa; /* Very Light Gray from css1 */
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.8;
+    }
+
+    /* Header Styles */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #2980b9, #16a085); /* Gradient from css1 (Blue + Teal) */
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-logo img {
+        height: 80px;
+        width: auto;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-text h1 {
+        margin: 0;
+        font-family: 'Lobster', cursive;
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+        color: #2980b9; /* Blue from css1 */
+    }
+
+    .header-text p {
+        margin: 5px 0;
+        font-weight: 300;
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about {
+        background: white;
+        padding: 30px;
+        margin: 20px auto;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        max-width: 600px;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+        background: linear-gradient(135deg, #2980b9, #16a085); /* Gradient from css1 */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .about p {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, #2980b9, #16a085); /* Gradient from css1 */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Week Button Styles */
+    .week-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, #2980b9, #16a085); /* Gradient from css1 */
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .week-btn:hover {
+        background: linear-gradient(135deg, #2980b9, #16a085);
+        transform: scale(1.05);
+    }
+
+    /* Footer Styles */
+    footer {
+        background: linear-gradient(135deg, #2980b9, #16a085); /* Gradient from css1 */
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+    }
+
+    /* Weeks Container */
+    .weeks-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
+    }
+
+    /* Week Section Styles */
+    .week {
+        background-color: #ffffff; /* White for Clean Look */
+        padding: 15px;
+        margin-top: 25px;
+        border-radius: 8px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+
+    .week-header {
+        font-size: 1.4em;
+        color: #2c3e50; /* Dark Blue from css1 */
+        font-weight: 600;
+        margin-bottom: 15px;
+        border-bottom: 2px solid black; /* Blue Border from css1 */
+        padding-bottom: 5px;
+    }
+    
+
+    .week-header1 {
+        font-size: 1.4em;
+        color: white; /* Dark Blue from css1 */
+        font-weight: 600;
+        margin-bottom: 15px;
+        border-bottom: 2px solid white; /* Blue Border from css1 */
+        padding-bottom: 5px;
+    }
+    /* Week Section Hover Effect */
+    .week:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    }
+
+    /* Background Color for Week (Alternating) */
+    .week:nth-child(odd) {
+        background-color: #ecf0f1; /* Light Gray from css1 */
+    }
+
+    .week:nth-child(even) {
+    /* background-color: #f9eb9c; */
+    background: linear-gradient(135deg, #9b59b6, #f39c12);
+    color: #ffff;
+}
+    /* Responsive Design */
+    @media (max-width: 768px) {
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 15px;
         }
-        h1, h2 {
-            color: #333;
+
+        h1 {
+            font-size: 2em;
         }
-        ul {
-            margin: 20px 0;
-            padding-left: 20px;
+
+        h2 {
+            font-size: 1.5em;
         }
-        li {
-            margin-bottom: 10px;
-        }
+
         .week {
-            background-color: #e0f7fa;
-            padding: 10px;
+            padding: 12px;
             margin-top: 20px;
-            border-radius: 8px;
         }
+
         .week-header {
             font-size: 1.2em;
-            color: #00796b;
         }
-    </style>
+
+        
+
+    }
+
+    h1 {
+        font-size: 2rem;
+    background: linear-gradient(135deg, #9b59b6, #f39c12); /* Gradient background */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text; /* Clips the background to the text */
+    color: transparent; /* Makes the text transparent so the gradient shows */
+    margin-bottom: 10px;
+    text-align: center;
+        }
+</style>
+
+    
+    
 </head>
 <body>
 
-    <h1>Project Timeline: Spoco & Flutter App Development</h1>
+    <h1>Project: Spoco - A turf management web App</h1>
+    
 
+    <!-- Week 1 -->
     <div class="week">
-        <div class="week-header">Week 1: Exploring Next.js, Next UI, and Firebase Integration</div>
+        <div class="week-header1">Week 1: Exploring Next.js, Next UI, and Firebase Integration</div>
         <ul>
             <li><strong>Day 1-2:</strong> Set up the development environment with VS Code. Installed Next.js and Next UI, and explored their features.</li>
             <li><strong>Day 3-4:</strong> Learned about Firebase and how to integrate it with Next.js. Set up Firebase and connected the app to the Firebase backend.</li>
@@ -47,6 +213,7 @@
         </ul>
     </div>
 
+    <!-- Week 2 -->
     <div class="week">
         <div class="week-header">Week 2: Form Creation and Firebase Connectivity</div>
         <ul>
@@ -56,8 +223,9 @@
         </ul>
     </div>
 
+    <!-- Week 3 -->
     <div class="week">
-        <div class="week-header">Week 3: Delving Deeper into Next UI and Firebase Features</div>
+        <div class="week-header1">Week 3: Delving Deeper into Next UI and Firebase Features</div>
         <ul>
             <li><strong>Day 11-12:</strong> Explored additional Next UI components and implemented them into the Spoco app, such as buttons and input fields.</li>
             <li><strong>Day 13-14:</strong> Enhanced form styling using Next UI and connected the components to Firebase in a more dynamic way.</li>
@@ -65,6 +233,7 @@
         </ul>
     </div>
 
+    <!-- Week 4 -->
     <div class="week">
         <div class="week-header">Week 4: Designing Core Features for Spoco</div>
         <ul>
@@ -74,8 +243,9 @@
         </ul>
     </div>
 
+    <!-- Week 5 -->
     <div class="week">
-        <div class="week-header">Week 5: Firebase Authentication and User Profiles</div>
+        <div class="week-header1">Week 5: Firebase Authentication and User Profiles</div>
         <ul>
             <li><strong>Day 21-22:</strong> Implemented Firebase Authentication to handle user login and registration.</li>
             <li><strong>Day 23-24:</strong> Developed the user profile page and linked profile data to Firebase for easy access and updating.</li>
@@ -83,6 +253,7 @@
         </ul>
     </div>
 
+    <!-- Week 6 -->
     <div class="week">
         <div class="week-header">Week 6: Setting Up Firestore Database and CRUD Operations</div>
         <ul>
@@ -92,8 +263,9 @@
         </ul>
     </div>
 
+    <!-- Week 7 -->
     <div class="week">
-        <div class="week-header">Week 7: Implementing Dynamic Content</div>
+        <div class="week-header1">Week 7: Implementing Dynamic Content</div>
         <ul>
             <li><strong>Day 31-32:</strong> Focused on adding dynamic content to Spoco, fetching data from Firebase and displaying it in real time.</li>
             <li><strong>Day 33-34:</strong> Integrated real-time database updates so that changes are reflected instantly on the app’s frontend.</li>
@@ -101,6 +273,7 @@
         </ul>
     </div>
 
+    <!-- Week 8 -->
     <div class="week">
         <div class="week-header">Week 8: Finalizing Core Features and Bug Fixing</div>
         <ul>
@@ -110,8 +283,9 @@
         </ul>
     </div>
 
+    <!-- Week 9 -->
     <div class="week">
-        <div class="week-header">Week 9: Introduction to Flutter</div>
+        <div class="week-header1">Week 9: Introduction to Flutter</div>
         <ul>
             <li><strong>Day 41-42:</strong> Started exploring Flutter and its core concepts, such as widgets, layouts, and state management.</li>
             <li><strong>Day 43-44:</strong> Created a simple Flutter project and experimented with building basic UI components.</li>
@@ -119,82 +293,115 @@
         </ul>
     </div>
 
-    <h2>Week 10: Building a Text Extractor App with Flutter</h2>
-<ul>
-  <li><strong>Day 46-47:</strong> Began building the text extractor app in Flutter, focusing on UI design and layout using Flutter widgets.</li>
-  <li><strong>Day 48-49:</strong> Integrated image-to-text extraction libraries and started testing the basic functionality.</li>
-  <li><strong>Day 50:</strong> Completed the first version of the text extractor app, enabling text extraction from images.</li>
-</ul>
+    <!-- Week 10 -->
+    <div class="week">
+        <div class="week-header">Week 10: Building a Text Extractor App with Flutter</div>
+        <ul>
+            <li><strong>Day 46-47:</strong> Began building the text extractor app in Flutter, focusing on UI design and layout using Flutter widgets.</li>
+            <li><strong>Day 48-49:</strong> Integrated image-to-text extraction libraries and started testing the basic functionality.</li>
+            <li><strong>Day 50:</strong> Completed the first version of the text extractor app, enabling text extraction from images.</li>
+        </ul>
+    </div>
 
-<h2>Week 11: Optimizing the Text Extractor App</h2>
-<ul>
-  <li><strong>Day 51-52:</strong> Improved the performance of the text extractor app by optimizing image processing and text extraction speed.</li>
-  <li><strong>Day 53-54:</strong> Added additional features like error handling and providing feedback to users when text extraction fails.</li>
-  <li><strong>Day 55:</strong> Finalized the UI of the app, ensuring a clean and user-friendly experience.</li>
-</ul>
+    <!-- Week 11 -->
+    <div class="week">
+        <div class="week-header1">Week 11: Optimizing the Text Extractor App</div>
+        <ul>
+            <li><strong>Day 51-52:</strong> Improved the performance of the text extractor app by optimizing image processing and text extraction speed.</li>
+            <li><strong>Day 53-54:</strong> Added additional features like error handling and providing feedback to users when text extraction fails.</li>
+            <li><strong>Day 55:</strong> Finalized the UI of the app, ensuring a clean and user-friendly experience.</li>
+        </ul>
+    </div>
 
-<h2>Week 12: Advanced Flutter Features and Testing</h2>
-<ul>
-  <li><strong>Day 56-57:</strong> Explored advanced Flutter features like animations and state management to enhance the user experience.</li>
-  <li><strong>Day 58-59:</strong> Integrated Firebase with the Flutter app to store extracted text and manage user data.</li>
-  <li><strong>Day 60:</strong> Conducted thorough testing and debugging of the Flutter app to ensure smooth functionality.</li>
-</ul>
+    <!-- Week 12 -->
+    <div class="week">
+        <div class="week-header">Week 12: Advanced Flutter Features and Testing</div>
+        <ul>
+            <li><strong>Day 56-57:</strong> Explored advanced Flutter features like animations and state management to enhance the user experience.</li>
+            <li><strong>Day 58-59:</strong> Integrated Firebase with the Flutter app to store extracted text and manage user data.</li>
+            <li><strong>Day 60:</strong> Conducted thorough testing and debugging of the Flutter app to ensure smooth functionality.</li>
+        </ul>
+    </div>
 
-<h2>Week 13: Connecting Flutter with Firebase</h2>
-<ul>
-  <li><strong>Day 61-62:</strong> Focused on Firebase integration in Flutter, setting up authentication and real-time data syncing.</li>
-  <li><strong>Day 63-64:</strong> Added features to store and retrieve user-generated text from Firebase in the Flutter app.</li>
-  <li><strong>Day 65:</strong> Tested the Firebase integration thoroughly and fixed any issues related to data syncing or authentication.</li>
-</ul>
+    <!-- Week 13 -->
+    <div class="week">
+        <div class="week-header1">Week 13: Connecting Flutter with Firebase</div>
+        <ul>
+            <li><strong>Day 61-62:</strong> Focused on Firebase integration in Flutter, setting up authentication and real-time data syncing.</li>
+            <li><strong>Day 63-64:</strong> Added features to store and retrieve user-generated text from Firebase in the Flutter app.</li>
+            <li><strong>Day 65:</strong> Tested the Firebase integration thoroughly and fixed any issues related to data syncing or authentication.</li>
+        </ul>
+    </div>
 
-<h2>Week 14: Spoco Feature Enhancements</h2>
-<ul>
-  <li><strong>Day 66-67:</strong> Worked on enhancing existing features in Spoco, such as user profile management and content display.</li>
-  <li><strong>Day 68-69:</strong> Added new features to improve data interaction and provided users with more control over their content.</li>
-  <li><strong>Day 70:</strong> Ensured that the app’s performance was optimized and that features were working without glitches.</li>
-</ul>
+    <!-- Week 14 -->
+    <div class="week">
+        <div class="week-header">Week 14: Spoco Feature Enhancements</div>
+        <ul>
+            <li><strong>Day 66-67:</strong> Worked on enhancing existing features in Spoco, such as user profile management and content display.</li>
+            <li><strong>Day 68-69:</strong> Added new features to improve data interaction and provided users with more control over their content.</li>
+            <li><strong>Day 70:</strong> Ensured that the app’s performance was optimized and that features were working without glitches.</li>
+        </ul>
+    </div>
 
-<h2>Week 15: UI and UX Improvements in Spoco</h2>
-<ul>
-  <li><strong>Day 71-72:</strong> Focused on improving the UI/UX design, ensuring a more polished look and feel for the app.</li>
-  <li><strong>Day 73-74:</strong> Incorporated feedback from test users to refine the navigation and overall usability.</li>
-  <li><strong>Day 75:</strong> Finalized the aesthetic elements of Spoco, including color schemes, typography, and layout consistency.</li>
-</ul>
+    <!-- Week 15 -->
+    <div class="week">
+        <div class="week-header1">Week 15: UI and UX Improvements in Spoco</div>
+        <ul>
+            <li><strong>Day 71-72:</strong> Focused on improving the UI/UX design, ensuring a more polished look and feel for the app.</li>
+            <li><strong>Day 73-74:</strong> Incorporated feedback from test users to refine the navigation and overall usability.</li>
+            <li><strong>Day 75:</strong> Finalized the aesthetic elements of Spoco to make it visually appealing.</li>
+        </ul>
+    </div>
 
-<h2>Week 16: Preparing for Deployment of Spoco</h2>
-<ul>
-  <li><strong>Day 76-77:</strong> Worked on finalizing deployment settings for Spoco, ensuring compatibility across different devices and browsers.</li>
-  <li><strong>Day 78-79:</strong> Tested the app’s responsiveness and ensured that Firebase functions correctly on all platforms.</li>
-  <li><strong>Day 80:</strong> Deployed Spoco to a staging environment for further testing and feedback.</li>
-</ul>
+    <!-- Week 16 -->
+    <div class="week">
+        <div class="week-header">Week 16: Implementing Notifications and Alerts</div>
+        <ul>
+            <li><strong>Day 76-77:</strong> Integrated push notifications and email alerts to keep users informed of important updates.</li>
+            <li><strong>Day 78-79:</strong> Tested notifications to ensure they were triggering correctly and appearing on users' devices.</li>
+            <li><strong>Day 80:</strong> Fine-tuned notification settings based on user feedback.</li>
+        </ul>
+    </div>
 
-<h2>Week 17: Testing and Feedback Collection for Spoco</h2>
-<ul>
-  <li><strong>Day 81-82:</strong> Conducted user testing to gather feedback on Spoco’s performance, UI, and features.</li>
-  <li><strong>Day 83-84:</strong> Worked on resolving bugs and improving app stability based on user feedback.</li>
-  <li><strong>Day 85:</strong> Finalized the app’s deployment on production, ensuring everything was ready for release.</li>
-</ul>
+    <!-- Week 17 -->
+    <div class="week">
+        <div class="week-header1">Week 17: Security Enhancements</div>
+        <ul>
+            <li><strong>Day 81-82:</strong> Worked on improving the security of user data and app interactions by implementing encryption and authentication features.</li>
+            <li><strong>Day 83-84:</strong> Reviewed potential security issues and addressed them through best practices.</li>
+            <li><strong>Day 85:</strong> Conducted security testing to ensure that the app was safe from vulnerabilities.</li>
+        </ul>
+    </div>
 
-<h2>Week 18: Finalizing Flutter App and Preparing for Launch</h2>
-<ul>
-  <li><strong>Day 86-87:</strong> Conducted final tests on the Flutter text extractor app, focusing on performance and bug fixes.</li>
-  <li><strong>Day 88-89:</strong> Prepared the Flutter app for deployment to app stores, including testing on different devices.</li>
-  <li><strong>Day 90:</strong> Finalized app store submissions and ensured the app’s readiness for public release.</li>
-</ul>
+    <!-- Week 18 -->
+    <div class="week">
+        <div class="week-header">Week 18: Final Testing and Debugging</div>
+        <ul>
+            <li><strong>Day 86-87:</strong> Conducted final rounds of testing to identify and fix any remaining bugs or issues.</li>
+            <li><strong>Day 88-89:</strong> Ensured that all features worked seamlessly across different devices and platforms.</li>
+            <li><strong>Day 90:</strong> Completed debugging and verified that the app was ready for release.</li>
+        </ul>
+    </div>
 
-<h2>Week 19: Final Deployment of Spoco and Flutter App</h2>
-<ul>
-  <li><strong>Day 91-92:</strong> Launched Spoco officially, ensuring that all features were working as expected on the production server.</li>
-  <li><strong>Day 93-94:</strong> Monitored app performance post-launch, looking for any unexpected issues or performance dips.</li>
-  <li><strong>Day 95:</strong> Released the Flutter text extractor app to the Google Play Store and Apple App Store.</li>
-</ul>
+    <!-- Week 19 -->
+    <div class="week">
+        <div class="week-header1">Week 19: Preparing for Launch</div>
+        <ul>
+            <li><strong>Day 91-92:</strong> Prepared for the launch of Spoco by setting up deployment pipelines and documentation.</li>
+            <li><strong>Day 93-94:</strong> Conducted a final review of the app and ensured that all marketing materials were ready for launch.</li>
+            <li><strong>Day 95:</strong> Finalized the app's launch strategy and scheduled the release date.</li>
+        </ul>
+    </div>
 
-<h2>Week 20: Post-Launch Monitoring and Updates</h2>
-<ul>
-  <li><strong>Day 96-97:</strong> Monitored user feedback and app performance for both Spoco and the Flutter app, addressing any issues.</li>
-  <li><strong>Day 98-99:</strong> Released minor updates to improve functionality and fix any post-launch bugs.</li>
-  <li><strong>Day 100:</strong> Concluded the year with successful deployment and continuous improvement for both Spoco and the Flutter app.</li>
-</ul>
+    <!-- Week 20 -->
+    <div class="week">
+        <div class="week-header">Week 20: Launch and Post-Launch Activities</div>
+        <ul>
+            <li><strong>Day 96-97:</strong> Launched Spoco to the public and began monitoring user activity and feedback.</li>
+            <li><strong>Day 98-99:</strong> Responded to user queries and fixed any immediate post-launch issues.</li>
+            <li><strong>Day 100:</strong> Analyzed launch metrics and started planning updates based on user feedback.</li>
+        </ul>
+    </div>
 
 </body>
 </html>
